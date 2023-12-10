@@ -11,14 +11,6 @@ public class Pedido {
 
     public Pedido() { }
     
-    public Pedido(String medicamento, String tipoMedicamento, int cantidad, String distribuidor, ArrayList<String> despachar) {
-        this.medicamento = medicamento;
-        this.tipoMedicamento = tipoMedicamento;
-        this.cantidad = cantidad;
-        this.distribuidor = distribuidor;
-        this.despachar = despachar;
-    }
-
     public String getMedicamento() {
         return medicamento;
     }
