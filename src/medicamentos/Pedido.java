@@ -1,0 +1,77 @@
+package medicamentos;
+
+import java.util.ArrayList;
+
+public class Pedido {
+    private String medicamento;
+    private String tipoMedicamento;
+    private int cantidad;
+    private String distribuidor;
+    private ArrayList<String> despachar = new ArrayList<>();
+
+    public Pedido() { }
+    
+    public Pedido(String medicamento, String tipoMedicamento, int cantidad, String distribuidor, ArrayList<String> despachar) {
+        this.medicamento = medicamento;
+        this.tipoMedicamento = tipoMedicamento;
+        this.cantidad = cantidad;
+        this.distribuidor = distribuidor;
+        this.despachar = despachar;
+    }
+
+    public String getMedicamento() {
+        return medicamento;
+    }
+
+    public void setMedicamento(String medicamento) {
+        this.medicamento = medicamento;
+    }
+
+    public String getTipoMedicamento() {
+        return tipoMedicamento;
+    }
+
+    public void setTipoMedicamento(String tipoMedicamento) {
+        this.tipoMedicamento = tipoMedicamento;
+    }
+
+    public int getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
+    }
+
+    public String getDistribuidor() {
+        return distribuidor;
+    }
+
+    public void setDistribuidor(String distribuidor) {
+        this.distribuidor = distribuidor;
+    }
+
+    public String getDespachar() {
+        String sucursales = "<html><body>Despachar a:<br>";
+        for (String sucursal : this.despachar) {
+            sucursales += creaDespacho(sucursal);
+        }
+        return sucursales += "</body></html>";
+    }
+
+    public void setDespachar(String despachar) {
+        this.despachar.add(despachar);
+    }
+
+    public String creaDespacho (String sucursal) {
+        String despacho = "";
+        if (sucursal.equals("Principal")) {
+            despacho = "PRINCIPAL<br>Calle de la Rosa n. 28 <br><br>";
+        }
+        if (sucursal.equals("Sucursal")) {
+            despacho = "SUCURSAL<br>Calle Alcazabilla n. 3<br>";
+        }
+        return despacho;
+    }
+    
+}
