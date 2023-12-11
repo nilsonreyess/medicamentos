@@ -267,7 +267,7 @@ public class FrmIntro extends javax.swing.JFrame {
     
     // Función que se encarga de validar la información recibida.
     private boolean verificar() {
-        if (this.txtMedicamento.getText().equals("")) {
+        if (this.txtMedicamento.getText().trim().equals("")) {
             ocultarMsgError();
             this.lblErrMedicamento.setVisible(true);
             this.txtMedicamento.requestFocus();
